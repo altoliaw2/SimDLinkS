@@ -61,7 +61,10 @@ class Sp1LS{
         else{
             Node<CL1>* op_TmpC = cp_Start;
             Node<CL1>* op_TmpP = cp_Start;
-            for(int i_Ct= 1; i_Ct< i_Ind; i_Ct++){
+            for(int i_Ct= 0; i_Ct< (i_Ind + 1); i_Ct++){
+                if(i_Ct == 0){
+                    continue;
+                }
                 op_TmpP = op_TmpC;
                 op_TmpC = op_TmpC->cp_Next;
             }
@@ -104,7 +107,7 @@ int main(){
     o_LS.fn_Trace();
 
     o_LS.fn_DelNode(0);
-    o_LS.fn_DelNode(0);
+    o_LS.fn_DelNode(1);
     o_LS.fn_Trace();
     return 0;
 }
