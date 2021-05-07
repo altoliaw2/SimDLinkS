@@ -22,10 +22,10 @@ class Sp1LS{
     }
     public:~Sp1LS(){
         for(Node<CL1>* op_TmpC= cp_Start;
-            op_TmpC != nullptr;
-            op_TmpC = op_TmpC->cp_Next){
-
-           delete op_TmpC;
+            op_TmpC != nullptr;){
+            Node<CL1>* op_TmpN= op_TmpC->cp_Next;
+            delete op_TmpC;
+            op_TmpC = op_TmpN;
         }
     }
 
